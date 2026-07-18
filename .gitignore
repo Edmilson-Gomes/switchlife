@@ -24,6 +24,10 @@ playwright-report
 test-results
 blob-report
 
+# Supabase CLI local state
+supabase/.temp
+supabase/.branches
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
