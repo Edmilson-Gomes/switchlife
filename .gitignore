@@ -28,6 +28,10 @@ blob-report
 supabase/.temp
 supabase/.branches
 
+# Internal docs / agent harness — kept local, not published
+.ai/
+docs/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
