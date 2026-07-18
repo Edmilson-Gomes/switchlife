@@ -27,9 +27,8 @@ describe('LoginPage (smoke)', () => {
       'href',
       '/recuperar-senha',
     )
-    expect(screen.getByRole('link', { name: 'Cadastre-se' })).toHaveAttribute(
-      'href',
-      '/cadastro',
-    )
+    // Cadastro público está desativado por enquanto — não deve haver link
+    // de "Cadastre-se" na tela de login (ver src/app/router.tsx).
+    expect(screen.queryByRole('link', { name: 'Cadastre-se' })).not.toBeInTheDocument()
   })
 })

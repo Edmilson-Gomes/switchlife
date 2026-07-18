@@ -64,15 +64,6 @@ export function LoginPage() {
         >
           Esqueci minha senha
         </Link>
-        <span>
-          Não tem conta?{' '}
-          <Link
-            to="/cadastro"
-            className="text-brand-600 hover:underline dark:text-brand-400"
-          >
-            Cadastre-se
-          </Link>
-        </span>
       </div>
     </AuthLayout>
   )

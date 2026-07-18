@@ -1,9 +1,8 @@
-import { createHashRouter } from 'react-router-dom'
+import { createHashRouter, Navigate } from 'react-router-dom'
 import { RequireAuth } from '../features/auth/components/RequireAuth'
 import { RedirectIfAuthenticated } from '../features/auth/components/RedirectIfAuthenticated'
 import { AppLayout } from '../components/layout/AppLayout'
 import { LoginPage } from '../pages/LoginPage'
-import { SignUpPage } from '../pages/SignUpPage'
 import { ResetPasswordPage } from '../pages/ResetPasswordPage'
 import { DashboardPage } from '../pages/DashboardPage'
 import { NotesListPage } from '../pages/NotesListPage'
@@ -23,7 +22,9 @@ export const router = createHashRouter([
     element: <RedirectIfAuthenticated />,
     children: [
       { path: '/login', element: <LoginPage /> },
-      { path: '/cadastro', element: <SignUpPage /> },
+      // Cadastro público desativado por enquanto — acesso é concedido
+      // manualmente pelo proprietário (ver docs/architecture/authentication-authorization.md).
+      { path: '/cadastro', element: <Navigate to="/login" replace /> },
       { path: '/recuperar-senha', element: <ResetPasswordPage /> },
     ],
   },
